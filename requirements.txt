@@ -1,0 +1,54 @@
+SimpleITK
+monai==1.4.0
+einops==0.8.1
+
+
+
+from tqdm import tqdm  # Import tqdm for progress bars
+#Lib for preprocess + train
+import logging
+import os
+import SimpleITK as sitk
+from sklearn.model_selection import KFold
+from torch.utils.data.dataset import Dataset
+import argparse
+import random
+import pathlib
+import time
+import torch.backends.cudnn as cudnn
+import torch.nn.parallel
+import torch.optim
+import torch.utils.data
+import yaml
+from monai.data import decollate_batch
+import math
+import shutil
+
+import os
+import cv2
+from glob import glob
+import numpy as np
+import pandas as pd
+import nibabel as nib
+from matplotlib import colors
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+
+#lib for model
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.nn import init
+from torch import optim
+import math 
+from torch.autograd import Variable
+import einops
+from einops import rearrange, repeat 
+from einops.layers.torch import Rearrange, Reduce
+from torch import nn, einsum
+from monai.networks.blocks.dynunet_block import get_conv_layer
+from monai.networks.blocks import UnetOutBlock
+#for training
+from functools import partial
+from monai.metrics import DiceMetric
+from monai.inferers import sliding_window_inference
